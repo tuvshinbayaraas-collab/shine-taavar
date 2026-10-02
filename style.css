@@ -1,0 +1,217 @@
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+
+body {
+	background-color: #1a1e29;
+	color: #ffffff;
+	font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+	min-height: 100vh;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	padding: 20px;
+}
+
+.main-layout {
+	display: flex;
+	gap: 25px;
+	width: 100%;
+	max-width: 1000px;
+}
+
+/* Зүүн талын ангиллын цонхнууд */
+.sidebar {
+	width: 280px;
+	display: flex;
+	flex-direction: column;
+	gap: 12px;
+}
+
+.sidebar h2 {
+	font-size: 18px;
+	color: #a0aec0;
+	margin-bottom: 5px;
+}
+
+.cat-btn {
+	background-color: #242b3d;
+	border: 2px solid #323b52;
+	color: #e2e8f0;
+	padding: 16px 14px;
+	border-radius: 12px;
+	cursor: pointer;
+	font-size: 14px;
+	font-weight: 600;
+	text-align: left;
+	display: flex;
+	align-items: center;
+	gap: 12px;
+	transition: all 0.2s ease;
+}
+
+.cat-btn .icon {
+	font-size: 22px;
+}
+
+.cat-btn:hover {
+	background-color: #2f3850;
+	border-color: #4a5568;
+}
+
+.cat-btn.active {
+	background-color: #3182ce;
+	border-color: #63b3ed;
+	color: white;
+	box-shadow: 0 4px 15px rgba(49, 130, 206, 0.4);
+}
+
+/* Үндсэн асуултын талбар */
+.quiz-container {
+	flex: 1;
+	background-color: #242b3d;
+	border-radius: 16px;
+	padding: 30px;
+	box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+	border: 1px solid #323b52;
+	display: flex;
+	flex-direction: column;
+	min-height: 480px;
+}
+
+.quiz-header {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	padding-bottom: 20px;
+	border-bottom: 1px solid #323b52;
+	margin-bottom: 25px;
+}
+
+.quiz-header h3 {
+	font-size: 20px;
+	color: #63b3ed;
+	margin-bottom: 4px;
+}
+
+#question-progress {
+	font-size: 13px;
+	color: #a0aec0;
+}
+
+.score-box {
+	background-color: #1a1e29;
+	padding: 8px 16px;
+	border-radius: 20px;
+	font-weight: bold;
+	color: #48bb78;
+	border: 1px solid #2f3850;
+	font-size: 16px;
+}
+
+/* Асуултын карт */
+.question-card {
+	background-color: #1a1e29;
+	border-radius: 12px;
+	padding: 24px;
+	min-height: 110px;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	text-align: center;
+	margin-bottom: 25px;
+	border: 1px solid #2d3748;
+}
+
+.question-card h2 {
+	font-size: 18px;
+	line-height: 1.5;
+	color: #f7fafc;
+}
+
+/* 4 сонголт */
+.options-grid {
+	display: grid;
+	grid-template-columns: 1fr 1fr;
+	gap: 15px;
+}
+
+.opt-btn {
+	background-color: #2d3748;
+	color: #edf2f7;
+	border: 2px solid transparent;
+	padding: 16px 20px;
+	border-radius: 10px;
+	font-size: 15px;
+	cursor: pointer;
+	font-weight: 500;
+	transition: all 0.2s ease;
+	text-align: left;
+}
+
+.opt-btn:hover:not(:disabled) {
+	background-color: #4a5568;
+	border-color: #718096;
+}
+
+/* Зөв, буруу товчны өнгө */
+.opt-btn.correct {
+	background-color: #2f855a !important;
+	border-color: #48bb78 !important;
+	color: white;
+}
+
+.opt-btn.wrong {
+	background-color: #c53030 !important;
+	border-color: #f56565 !important;
+	color: white;
+}
+
+/* Төгсгөлийн дэлгэц */
+.result-box {
+	text-align: center;
+	margin: auto 0;
+}
+
+.result-box h2 {
+	font-size: 24px;
+	margin-bottom: 10px;
+	color: #63b3ed;
+}
+
+.final-score {
+	font-size: 54px;
+	font-weight: bold;
+	color: #48bb78;
+	margin: 20px 0;
+}
+
+.restart-btn {
+	background-color: #3182ce;
+	color: white;
+	border: none;
+	padding: 12px 28px;
+	font-size: 16px;
+	font-weight: bold;
+	border-radius: 8px;
+	cursor: pointer;
+	transition: background-color 0.2s;
+}
+
+.restart-btn:hover {
+	background-color: #2b6cb0;
+}
+
+@media (max-width: 768px) {
+	.main-layout {
+		flex-direction: column;
+	}
+	.sidebar {
+		width: 100%;
+	}
+	.options-grid {
+		grid-template-columns: 1fr;
+	}
+}

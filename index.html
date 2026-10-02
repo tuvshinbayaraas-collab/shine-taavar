@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="mn">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Тааварт Тоглоом</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div class="main-layout">
+        <!-- Зүүн талын 4 ангиллын сонголт -->
+        <aside class="sidebar">
+            <h2>Ангилал сонгох</h2>
+            <button class="cat-btn active" onclick="angilalSolih('tanin_medehui', this)">
+                <span class="icon">🧠</span>
+                <span>Танин мэдэхүй</span>
+            </button>
+            <button class="cat-btn" onclick="angilalSolih('hicheel', this)">
+                <span class="icon">📚</span>
+                <span>Хичээлтэй холбоотой</span>
+            </button>
+            <button class="cat-btn" onclick="angilalSolih('onisogo_ertunts', this)">
+                <span class="icon">🐎</span>
+                <span>Онисого, Ертөнцийн 3</span>
+            </button>
+            <button class="cat-btn" onclick="angilalSolih('sport', this)">
+                <span class="icon">⚽</span>
+                <span>Спортын асуултууд</span>
+            </button>
+        </aside>
+
+        <!-- Баруун талын үндсэн тоглоомын талбар -->
+        <main class="quiz-container">
+            <!-- Тоглоомын дээд хэсэг: Ангиллын нэр, явц, оноо -->
+            <div class="quiz-header">
+                <div>
+                    <h3 id="current-category-title">Танин мэдэхүй</h3>
+                    <span id="question-progress">Асуулт: 1 / 10</span>
+                </div>
+                <div class="score-box">
+                    Оноо: <span id="current-score">0</span>
+                </div>
+            </div>
+
+            <!-- Асуулт ба 4 хариулт -->
+            <div id="game-box">
+                <div class="question-card">
+                    <h2 id="question-text">Асуулт ачаалж байна...</h2>
+                </div>
+
+                <div class="options-grid" id="options-container">
+                    <!-- 4 сонголт JavaScript-ээр үүснэ -->
+                </div>
+            </div>
+
+            <!-- Тоглоом дуусах үеийн цонх -->
+            <div id="result-box" class="result-box" style="display: none;">
+                <h2>Баяр хүргэе! Тоглоом дууслаа.</h2>
+                <p>Таны цуглуулсан оноо:</p>
+                <div class="final-score" id="final-score">0</div>
+                <button class="restart-btn" onclick="ehluuleh()">Дахин тоглох 🔄</button>
+            </div>
+        </main>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
